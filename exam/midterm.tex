@@ -1,0 +1,742 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\begin{enumerate}
+\item [1.] Suppose the complete solution to the equation
+$$
+A x=\left[\begin{array}{l}
+2 \\
+4 \\
+2
+\end{array}\right] \text { is } x=\left[\begin{array}{l}
+2 \\
+0 \\
+0
+\end{array}\right]+c\left[\begin{array}{l}
+1 \\
+1 \\
+0
+\end{array}\right]+d\left[\begin{array}{l}
+0 \\
+0 \\
+1
+\end{array}\right]
+$$
+
+\begin{enumerate}
+    \item [a.] \textbf{Q.} What is the dimension of the row space of $A$ ? 
+    
+    \textbf{A.} The row space is $C(A^T)$, a subspace of $R^n$. The dimension of the row space is the rank $r$. We have two free variables $c$ and $d$, and one pivot so that rank is 1.
+    
+    \item [b.] \textbf{Q.} What is the matrix $A$ ? 
+    $$
+    \begin{aligned}
+    A\bm{x_p} &= \bm{b}\\
+    \left[\begin{array}{lll}
+    1 & ? & ? \\
+    2 & ? & ?\\
+    1 & ? & ?
+    \end{array}\right]\left[\begin{array}{l}
+    2 \\
+    0 \\
+    0
+    \end{array}\right] &= \left[\begin{array}{l}
+    2 \\
+    4 \\
+    2
+    \end{array}\right]\\
+    A\bm{x_n} &= \bm{0} \\
+    \left[\begin{array}{lll}
+    1 & -1 & ? \\
+    2 & -2 & ?\\
+    1 & -1 & ?
+    \end{array}\right]\left[\begin{array}{l}
+    1 \\
+    1 \\
+    0
+    \end{array}\right] &= \left[\begin{array}{l}
+    0 \\
+    0 \\
+    0
+    \end{array}\right]\\
+    \left[\begin{array}{lll}
+    1 & -1 & 0 \\
+    2 & -2 & 0\\
+    1 & -1 & 0
+    \end{array}\right]\left[\begin{array}{l}
+    0 \\
+    0 \\
+    1
+    \end{array}\right] &= \left[\begin{array}{l}
+    0 \\
+    0 \\
+    0
+    \end{array}\right]\\
+    \end{aligned}
+    $$
+    
+    \textbf{A.}
+    
+    \item [c.] \textbf{Q.} Describe exactly all the vectors $b$ for which $A x=b$ can be solved. (Don't just say that $b$ must be in the column space.) 
+    
+    \textbf{A.}
+    
+    $$
+    \begin{aligned}
+    \left[\begin{array}{lll|l}
+    1 & -1 & 0 & b_1\\
+    2 & -2 & 0 & b_2\\
+    1 & -1 & 0 & b_3
+    \end{array}\right]&\\
+    -R_1 + R_3 &\rightarrow R_3\\
+    \left[\begin{array}{lll|l}
+    1 & -1 & 0 & b_1\\
+    2 & -2 & 0 & b_2\\
+    0 & 0 & 0 & -b_1 + b_3
+    \end{array}\right]&\\
+    -2R_1 + R_2 &\rightarrow R_2\\
+    \left[\begin{array}{lll|l}
+    1 & -1 & 0 & b_1\\
+    0 & 0 & 0 & -2b_1 + b_2\\
+    0 & 0 & 0 & -b_1 + b_3
+    \end{array}\right]&\\
+    \end{aligned}
+    $$
+    
+    If $Ax=b$ has a solution, $-2b_1 + b_2 = 0$ and $-b_1 + b_3=0$.
+    
+    
+\end{enumerate}
+
+\item [2.] Suppose the matrix $A$ has reduced row echelon form $R$ :
+$$
+A=\left[\begin{array}{cccc}
+1 & 2 & 1 & b \\
+2 & a & 1 & 8 \\
+& \text { (row } & 3 \text { ) }
+\end{array}\right], \quad R=\left[\begin{array}{llll}
+1 & 2 & 0 & 3 \\
+0 & 0 & 1 & 2 \\
+0 & 0 & 0 & 0
+\end{array}\right]
+$$
+\begin{enumerate}
+    \item [a.] \textbf{Q.} What can you say immediately about row 3 of $A$ ? 
+    \textbf{A.} Row 3 of A is not linearly independent.
+    
+    \item [b.] \textbf{Q.} What are the numbers $a$ and $b$ ? \textbf{A.}
+    $$
+    \begin{aligned}
+    -2R_1+R_2 & \rightarrow R_2\\
+    \left[\begin{array}{cccc}
+    1 & 2 & 1 & b \\
+    0 & -4+a & -1 & -2b+8 \\
+    & \text { (row } & 3 \text { ) }
+    \end{array}\right]&\\
+    R_2+R_1 &\rightarrow R_1\\
+    \left[\begin{array}{cccc}
+    1 & (-4+a)+2 & 0 & (-2b+8) + b \\
+    0 & -4+a & -1 & -2b+8 \\
+    & \text { (row } & 3 \text { ) }
+    \end{array}\right]&\\
+    -R_2 &\rightarrow R_2\\
+    \left[\begin{array}{cccc}
+    1 & (-4+a)+2 & 0 & (-2b+8) + b \\
+    0 & -(-4+a) & 1 & -(-2b+8) \\
+    & \text { (row } & 3 \text { ) }
+    \end{array}\right]&\\
+    (-4+a)+2 & = 2\\
+    a & = 4\\
+    (-2b+8) + b = 3\\
+    b & = 5
+    \end{aligned}
+    $$
+
+    \item [c.] \textbf{Q.} Describe all solutions of $R x=0$. Circle the spaces that are the same for $A$ as for $R$ : (row space)(column space)(null space). 
+    \textbf{A.}
+    
+    $$
+    \begin{aligned}
+    \left[\begin{array}{llll}
+    1 & 2 & 0 & 3 \\
+    0 & 0 & 1 & 2 \\
+    0 & 0 & 0 & 0
+    \end{array}\right] \left[\begin{array}{l}
+    x_1 \\
+    x_2 \\
+    x_3 \\
+    x_4
+    \end{array}\right] & = \left[\begin{array}{l}
+    0 \\
+    0 \\
+    0
+    \end{array}\right]\\
+    x_1 + 2x_2 + 3x_4 &= 0\\
+    x_3 + 2x_4 & = 0\\
+    \end{aligned}
+    $$
+    
+    Take free variables $x_2$ and $x_4$ and let $x_2=k_1$ and $x_4 = k_2$
+    
+    $$
+    \begin{aligned}
+    x_1 &= -2k_1 - 3k_2\\
+    x_3 &= -2k_2\\
+    \left[\begin{array}{c}
+    x_{1} \\
+    x_{2} \\
+    x_{3} \\
+    x_{4}
+    \end{array}\right]&=k_{1}\left[\begin{array}{c}
+    -2 \\
+    1 \\
+    0 \\
+    0
+    \end{array}\right]+k_{2}\left[\begin{array}{c}
+    -3 \\
+    0 \\
+    -2 \\
+    1
+    \end{array}\right] \quad \forall k_1,k_2 \in \mathbb{R}
+    \end{aligned}
+    $$
+
+\end{enumerate}
+
+\item[3.] Let
+$$
+A=\left[\begin{array}{lll}
+2 & 2 & 1 \\
+2 & 5 & 0 \\
+0 & 3 & 2
+\end{array}\right]
+$$
+\begin{enumerate}
+    \item [a.] \textbf{Q.} Factor $A$ as $A=L U$, where $L$ is lower triangular and $U$ is upper triangular. 
+    
+    \textbf{A.} 
+    
+    $$
+    \begin{aligned}
+    E_{32}E_{21}A &= \left[\begin{array}{lll}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & -1 & 1
+    \end{array}\right]\left[\begin{array}{lll}
+    1 & 0 & 0 \\
+    -1 & 1 & 0 \\
+    0 & 0 & 1
+    \end{array}\right]
+    \left[\begin{array}{lll}
+    2 & 2 & 1 \\
+    2 & 5 & 0 \\
+    0 & 3 & 2
+    \end{array}\right] \\
+    & = \left[\begin{array}{lll}
+    2 & 2 & 1 \\
+    0 & 3 & -1 \\
+    0 & 0 & 3
+    \end{array}\right]\\
+    & = U\\
+    L & = (E_{32}E_{21})^{-1}\\
+    & = E_{21}^{-1}E_{32}^{-1}\\
+    & = \left[\begin{array}{lll}
+    1 & 0 & 0 \\
+    1 & 1 & 0 \\
+    0 & 0 & 1
+    \end{array}\right]\left[\begin{array}{lll}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 1 & 1
+    \end{array}\right]\\
+    & = \left[\begin{array}{lll}
+    1 & 0 & 0 \\
+    1 & 1 & 0 \\
+    0 & 1 & 1
+    \end{array}\right]\\
+    A & = LU
+    \end{aligned}
+    $$
+    
+    \item [b.] \textbf{Q.} Find a basis for the column space of $A$. 
+    
+    \textbf{A.} In matrix $U$, pivots exists in columns 0,1,and 2. These columns in matrix $A$ define the basis for the column space of the matrix.
+    $a\left[\begin{array}{l}2 \\ 2 \\ 0\end{array}\right] + b\left[\begin{array}{l}2 \\ 5 \\ 3\end{array}\right] + c\left[\begin{array}{l}1 \\ 0 \\ 2\end{array}\right] \forall a,b,c \in \mathbb{R}$
+    
+    
+    \item [c.] \textbf{Q.} What is the rank of $A$?
+    
+    \textbf{A.} $A$ has three pivots so the rank is 3.
+    
+\end{enumerate}
+
+\item[4.] \textbf{Q.} Find a general formula for the solutions of the following linear system of equations
+$$
+\begin{aligned}
+-x_1 + 3x_2 + 2x_4 & = 1\\
+4x_1 - 12x_2 + 2x_3 -4x_4 &= -4\\
+-7x_1 +21x_2 + 2x_3 + 18x_4 &= 7
+\end{aligned}
+$$
+
+\textbf{A.}
+$$
+\begin{aligned}
+A\bm{x} &= \bm{b}\\
+\left[\begin{array}{llll}
+-1 & 3 & 0 & 2 \\
+4 & -12 & 2 & -4 \\
+-7 & 21 & 2 & 18
+\end{array}\right] \left[\begin{array}{l}
+x_1\\
+x_2\\
+x_3\\
+x_4
+\end{array}\right] & = \left[\begin{array}{l}
+1 \\
+-4\\
+7
+\end{array}\right]\\
+\left[A\mid\bm{b}\right] &= \left[\begin{array}{llll|l}
+-1 & 3 & 0 & 2 & 1 \\
+4 & -12 & 2 & -4 & -4\\
+-7 & 21 & 2 & 18 & 7
+\end{array}\right]\\
+4R_1 + R_2 &\rightarrow R_2\\
+&= \left[\begin{array}{llll|l}
+-1 & 3 & 0 & 2 & 1 \\
+0 & 0 & 2 & 4 & 0\\
+-7 & 21 & 2 & 18 & 7
+\end{array}\right]\\
+-7R_1 + R_3 &\rightarrow R_3\\
+&= \left[\begin{array}{llll|l}
+-1 & 3 & 0 & 2 & 1 \\
+0 & 0 & 2 & 4 & 0\\
+0 & 0 & 2 & 4 & 0
+\end{array}\right]\\
+-R_2 + R_3 &\rightarrow R_3\\
+&= \left[\begin{array}{llll|l}
+-1 & 3 & 0 & 2 & 1 \\
+0 & 0 & 2 & 4 & 0\\
+0 & 0 & 0 & 0 & 0
+\end{array}\right]\\
+\frac{1}{2}R_2 &\rightarrow R_2\\
+&= \left[\begin{array}{llll|l}
+-1 & 3 & 0 & 2 & 1 \\
+0 & 0 & 1 & 2 & 0\\
+0 & 0 & 0 & 0 & 0
+\end{array}\right]\\
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+s_1 \text{ free variables} \quad x_2 &= 1, x_4 = 0\\
+x_3+2(0) &= 0 \\
+x_3 &= 0\\
+-x_1+3(1)+2(0) &= 1 \\
+x_1 & = 2\\
+s_1 &= (2,1,0,0)\\
+s_2 \text{ free variables} \quad x_2 &= 0, x_4 = 1\\
+x_3+2(1) &= 0 \\
+x_3 &= -2\\
+-x_1+3(0)+2(1) &= 1 \\
+x_1 & = 1\\
+s_2 &= (1,0,-2,1)\\
+x_n & = x_2s_1 + x_4s_2 \\
+x_p \text{ free variables} \quad x_2 &= 0, x_4 = 0\\
+x_3+2(0) &= 0 \\
+x_3 &= 0\\
+-x_1+3(0)+2(0) &= 1 \\
+x_1 & = -1\\
+x_p &= (-1,0,0,0)\\
+\bm{x} & = x_n + x_p \\
+\bm{x}&=x_2\left[\begin{array}{c}
+2 \\
+1 \\
+0 \\
+0
+\end{array}\right]+x_4\left[\begin{array}{c}
+1 \\
+0 \\
+-2 \\
+1
+\end{array}\right]+\left[\begin{array}{c}
+-1 \\
+0 \\
+0 \\
+0
+\end{array}\right]
+\end{aligned}
+$$
+
+\item[5.] Start with the vectors
+
+$$
+u=\left[\begin{array}{l}
+2 \\
+1 \\
+2
+\end{array}\right] \text { and } v=\left[\begin{array}{l}
+1 \\
+3 \\
+0
+\end{array}\right]
+$$
+\begin{enumerate}
+    \item [a.] \textbf{Q.} Find two other vectors $w$ and $z$ whose linear combinations fill the same plane $P$ as the linear combinations of $\boldsymbol{u}$ and $\boldsymbol{v}$. 
+    
+    \textbf{A.}
+    
+    $$
+    \begin{aligned}
+    w&=u+v=\left[\begin{array}{l}
+    2 \\
+    1 \\
+    2
+    \end{array}\right]+\left[\begin{array}{l}
+    1 \\
+    3 \\
+    0
+    \end{array}\right]=\left[\begin{array}{l}
+    3 \\
+    4 \\
+    2
+    \end{array}\right]\\
+    z&=u-v=\left[\begin{array}{l}
+    2 \\
+    1 \\
+    2
+    \end{array}\right]-\left[\begin{array}{l}
+    1 \\
+    3 \\
+    0
+    \end{array}\right]=\left[\begin{array}{c}
+    1 \\
+    -2 \\
+    2
+    \end{array}\right]
+    \end{aligned}
+    $$
+    
+    Check for linear independence and thus span
+    
+    $$
+    \begin{aligned}
+    \alpha\left[\begin{array}{l}
+    2 \\
+    1 \\
+    2
+    \end{array}\right]+\beta\left[\begin{array}{l}
+    1 \\
+    3 \\
+    0
+    \end{array}\right]&=\left[\begin{array}{l}
+    0 \\
+    0 \\
+    0
+    \end{array}\right]\\
+    2 \alpha + \beta &= 0 \\
+    \alpha + 3 \beta &= 0 \\
+    2 \alpha &=0\\
+    \alpha = \beta &= 0\\
+    \operatorname{Span}\{w, z\}=\operatorname{Span}\{u, v\} &= P
+    \end{aligned}
+    $$
+    
+    \item [b.] \textbf{Q.} Find a 3 by 3 matrix $M$ whose column space is that same plane $P$. 
+    
+    \textbf{A.}
+    $$
+    \begin{aligned}
+    M & = \left[\begin{array}{lll}
+    2 & 2 & 3 \\
+    1 & 1 & 1 \\
+    2 & 2 & 0
+    \end{array}\right]
+    \end{aligned}
+    $$
+    
+    \item [c.] \textbf{Q.} Describe all vectors $x$ in the nullspace $(M x=0)$ of your matrix $M$. 
+    $$
+    \begin{aligned}
+    M & = \left[\begin{array}{lll}
+    2 & 2 & 3 \\
+    1 & 1 & 1 \\
+    2 & 2 & 0
+    \end{array}\right]\\
+    -\frac{1}{2}R_1 + R_2 &\rightarrow R_2\\
+    & = \left[\begin{array}{lll}
+    2 & 2 & 3 \\
+    0 & 0 & -\frac{1}{2} \\
+    2 & 2 & 0
+    \end{array}\right]\\
+    -R_1 + R_3 &\rightarrow R_3\\
+    & = \left[\begin{array}{lll}
+    2 & 2 & 3 \\
+    0 & 0 & -\frac{1}{2} \\
+    0 & 0 & -3
+    \end{array}\right]\\
+    -6R_2 &\rightarrow R_2\\
+    & = \left[\begin{array}{lll}
+    2 & 2 & 3 \\
+    0 & 0 & 3 \\
+    0 & 0 & -3
+    \end{array}\right]\\
+    R_2 + R_3 &\rightarrow R_3\\
+    & = \left[\begin{array}{lll}
+    2 & 2 & 3 \\
+    0 & 0 & 3 \\
+    0 & 0 & 0
+    \end{array}\right]\\
+    -R_2 + R_1 &\rightarrow R_1\\
+    \frac{1}{2}R_1 &\rightarrow R_1\\
+    \frac{1}{3}R_2 &\rightarrow R_2\\
+    R & = \left[\begin{array}{lll}
+    1 & 1 & 0 \\
+    0 & 0 & 1 \\
+    0 & 0 & 0
+    \end{array}\right]\\
+    x_1+x_2 & = 0\\
+    x_3 & = 0\\
+    s_1 \text{ free variable } \quad x_2 = 1 \\
+    x_1 + 1 & = 0 \\
+    x_1 &= -1 \\
+    s_1 & = (-1,1,0) \\
+    x&=x_2\left[\begin{array}{c}
+    -1\\
+    1\\
+    0
+    \end{array}\right]
+    \end{aligned}
+    $$
+    
+    \textbf{A.}
+    
+\end{enumerate}
+
+\item[6.] 
+    \begin{enumerate}
+    \item [a.] \textbf{Q.} By elimination put $A$ into its upper triangular form $U$. Which are the pivot columns and free columns?
+    $$
+    A=\left[\begin{array}{llll}
+    1 & 3 & 2 & 1 \\
+    2 & 8 & 5 & 2 \\
+    1 & 5 & 3 & 1
+    \end{array}\right]
+    $$
+    
+    \textbf{A.}
+    
+    $$
+    \begin{aligned}
+    A&=\left[\begin{array}{llll}
+    1 & 3 & 2 & 1 \\
+    2 & 8 & 5 & 2 \\
+    1 & 5 & 3 & 1
+    \end{array}\right]\\
+    -2R_1 + R_2 & \rightarrow R_2\\
+    &=\left[\begin{array}{llll}
+    1 & 3 & 2 & 1 \\
+    0 & 2 & 1 & 0 \\
+    1 & 5 & 3 & 1
+    \end{array}\right]\\
+    -R_1 + R_3 & \rightarrow R_3\\
+    &=\left[\begin{array}{llll}
+    1 & 3 & 2 & 1 \\
+    0 & 2 & 1 & 0 \\
+    0 & 2 & 1 & 0
+    \end{array}\right]\\
+    -R_2 + R_3 & \rightarrow R_3\\
+    U &=\left[\begin{array}{llll}
+    1 & 3 & 2 & 1 \\
+    0 & 2 & 1 & 0 \\
+    0 & 0 & 0 & 0
+    \end{array}\right]\\
+    \end{aligned}
+    $$
+    
+    Columns 1 and 2 are pivots (pivot variables $x_1$, $x_2$) and columns 3 and 4 are free (free variables $x_3$, $x_4$).
+    
+    \item[b.] \textbf{Q.} Describe specifically the vectors in the nullspace of $A$. One way is to find the "special solutions" (how many??) to $A \boldsymbol{x}=0$ by setting the free variables to 1 or 0. 
+    
+    \textbf{A.}
+    
+    $$
+    \begin{aligned}
+    x_1 + 3x_2 + 2x_3 + x_4 &= 0 \\
+    2x_2 + x_3 &= 0 \\
+    s_1 \text{ free variables} \quad x_3 &= 1, x_4 = 0\\
+    2x_2 + (1) &= 0 \\
+    x_2 &= -\frac{1}{2} \\
+    x_1 + 3(-\frac{1}{2}) + 2(1) + 0 &= 0 \\
+    x_1 &= -\frac{1}{2} \\
+    s_1 &= (-\frac{1}{2},-\frac{1}{2},1,0)\\
+    s_2 \text{ free variables} \quad x_3 &= 0, x_4 = 1\\
+    2x_2 + (0) &= 0 \\
+    x_2 &= 0 \\
+    x_1 + 3(0) + 2(0) + 1 &= 0 \\
+    x_1 &= -1 \\
+    s_2 &= (-1,0,0,1)\\
+    x_n & = x_3s_1 + x_4s_2 \\
+    x_n&=x_3\left[\begin{array}{c}
+    -\frac{1}{2} \\
+    -\frac{1}{2} \\
+    1 \\
+    0
+    \end{array}\right]+x_4\left[\begin{array}{c}
+    -1 \\
+    0 \\
+    0 \\
+    1
+    \end{array}\right]
+    \end{aligned}
+    $$
+    
+    \item[c.] \textbf{Q.}  Does $A \boldsymbol{x}=b$ have a solution for the right side $b=(3,8,5) ?$ If it does, find one particular solution and then the complete solution to this system $A \boldsymbol{x}=\boldsymbol{b}$. 
+    
+    \textbf{A.}
+    
+    $$
+    \begin{aligned}
+    x_p \text{ free variables} \quad x_3 &= 0, x_4 = 0\\
+    2x_2 + (0) &= 8 \\
+    x_2 &= 4 \\
+    x_1 + 3(4) + 2(0) + 0 &= 3 \\
+    x_1 &= -9 \\
+    x_p &= (-9,4,0,0)\\
+    \bm{x} & = x_n + x_p \\
+    \bm{x}&=x_3\left[\begin{array}{c}
+    -\frac{1}{2} \\
+    -\frac{1}{2} \\
+    1 \\
+    0
+    \end{array}\right]+x_4\left[\begin{array}{c}
+    -1 \\
+    0 \\
+    0 \\
+    1
+    \end{array}\right]+\left[\begin{array}{c}
+    -9 \\
+    4 \\
+    0 \\
+    0
+    \end{array}\right]
+    \end{aligned}
+    $$
+    
+    \end{enumerate}
+    
+\item[7.] \textbf{Q.} Let $A$ be an unknown $3 \times 3$ matrix, and let
+    $$
+    P=\left[\begin{array}{lll}
+    0 & 1 & 0 \\
+    1 & 0 & 0 \\
+    0 & 0 & 1
+    \end{array}\right]
+    $$
+    Consider the augmented matrix $B=[A \mid P]$. After performing row operations on $B$ we get the following matrix
+    $$
+    \left[\begin{array}{ccc|ccc}
+    1 & 0 & 1 & 2 & -3 & -4 \\
+    0 & 1 & 0 & -1 & 2 & 2 \\
+    0 & 0 & -1 & 0 & 0 & 1
+    \end{array}\right]
+    $$
+    What is $A^{-1}$ ?
+    
+    \textbf{A.}
+    
+    $$
+    \begin{aligned}
+        \left[\begin{array}{ccc|ccc}
+    1 & 0 & 1 & 2 & -3 & -4 \\
+    0 & 1 & 0 & -1 & 2 & 2 \\
+    0 & 0 & -1 & 0 & 0 & 1
+    \end{array}\right]&\\
+    R_3 + R_1 & \rightarrow R_1\\
+    \left[\begin{array}{ccc|ccc}
+    1 & 0 & 0 & 2 & -3 & -3 \\
+    0 & 1 & 0 & -1 & 2 & 2 \\
+    0 & 0 & -1 & 0 & 0 & 1
+    \end{array}\right]&\\
+    R_1 \leftrightarrow R_2& \\
+    \left[\begin{array}{ccc|ccc}
+    0 & 1 & 0 & -1 & 2 & 2 \\
+    1 & 0 & 0 & 2 & -3 & -3 \\
+    0 & 0 & -1 & 0 & 0 & 1
+    \end{array}\right]&\\
+    -R_1 \rightarrow R_1& \\
+    \left[\begin{array}{ccc|ccc}
+    0 & 1 & 0 & -1 & 2 & 2 \\
+    1 & 0 & 0 & 2 & -3 & -3 \\
+    0 & 0 & 1 & 0 & 0 & -1
+    \end{array}\right]&\\
+    [P \mid A^{-1}]&
+    \end{aligned}
+    $$
+    
+\item[8.] \textbf{Q.} Let $A$ and $b$ be as below. For any real number $t$, and any real number $s$ : Find the complete solution to the equation $A x=b$ using the algorithm described in class and in the book. (It depends on $t$ and $s$.)
+    $$
+    A=\left[\begin{array}{llll}
+    1 & 0 & 0 & 4 \\
+    1 & 0 & 1 & 0 \\
+    1 & 1 & 0 & 0 \\
+    1 & 2 & 3 & t
+    \end{array}\right] \text { and } b=\left[\begin{array}{l}
+    2 \\
+    0 \\
+    0 \\
+    s
+    \end{array}\right]\\
+    $$
+    
+    \textbf{A.}
+    
+    $$
+    \begin{aligned}
+    \left[\begin{array}{llll|l}
+    1 & 0 & 0 & 4 & 2\\
+    1 & 0 & 1 & 0 & 0\\
+    1 & 1 & 0 & 0 & 0\\
+    1 & 2 & 3 & t & s
+    \end{array}\right]&\\
+    R_2-R-1 &\rightarrow R_2\\
+    R_3-R-1 &\rightarrow R_3\\
+    R_4-R-1 &\rightarrow R_4\\
+    \left[\begin{array}{llll|l}
+    1 & 0 & 0 & 4 & 2\\
+    0 & 0 & 1 & -4 & -2\\
+    0 & 1 & 0 & -4 & -2\\
+    0 & 2 & 3 & t-4 & s-2
+    \end{array}\right]&\\
+    R_2 \leftrightarrow R_3\\
+    \left[\begin{array}{llll|l}
+    1 & 0 & 0 & 4 & 2\\
+    0 & 1 & 0 & -4 & -2\\
+    0 & 0 & 1 & -4 & -2\\
+    0 & 2 & 3 & t-4 & s-2\\
+    \end{array}\right]&\\
+    2R_2-R_4 &\rightarrow R_4\\
+    3R_2-R_4 &\rightarrow R_4\\
+    \left[\begin{array}{llll|l}
+    1 & 0 & 0 & 4 & 2\\
+    0 & 1 & 0 & -4 & -2\\
+    0 & 0 & 1 & -4 & -2\\
+    0 & 0 & 0 & -t-16 & -s-8\\
+    \end{array}\right]&\\
+    (-t-16)x_4 & = -s-8\\
+    x_4 & = \frac{8+s}{16+t}\\
+    x_3 - 4x_4 &= -2\\
+    x_3 & = 4\frac{8+s}{16+t} - 2\\
+    x_2 - 4x_4 & = -2\\
+    x_2 & = 4\frac{8+s}{16+t} - 2\\
+    x_1 + 4x+4 &= 2\\
+    x_1 & = -4\frac{8+s}{16+t} + 2
+    \end{aligned}
+    $$
+    
+    
+\end{enumerate}
+
+\end{document}

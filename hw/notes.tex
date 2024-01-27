@@ -1,0 +1,432 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+
+
+Starting point of the analysis: Maxwell wave eq. in a bulk spherical cavity The electric field obeys (inside out outside of the cavity) the classical wave equation:
+$$
+\left[\Delta-\frac{\epsilon\left(\mathbf{r}, \omega,\|\mathbf{E}\|^2\right)}{c^2} \frac{\partial^2}{\partial t^2}\right] \mathbf{E}(\mathbf{r}, t)=\mathbf{0}
+$$
+The relative permittivity $\epsilon$ is defined as:
+$$
+\epsilon\left(\mathbf{r}, \omega,\|\mathbf{E}\|^2\right)= \begin{cases}n^2\left(\omega,\|\mathbf{E}\|^2\right) & \text { if } r \leqslant a \\ 1 & \text { if } r>a\end{cases}
+$$
+
+\textbf{Approach to Comb Generation in WGM Resonators}
+
+Cavity is sharply resonant around the eigenmode:
+$$
+\mathbf{E}(\mathbf{r}, t)=\sum_\mu \frac{1}{2} \mathcal{E}_\mu(t) e^{i \omega_\mu t} \boldsymbol{\Upsilon}_\mu(\mathbf{r})+\frac{1}{2} \mathcal{E}_{\text {ext }} e^{i \Omega_0 t} \mathbf{e}_0+\text { c.c. }
+$$
+$\mu$ : various mode under consideration
+$\gamma_\mu(r)$ : orthonormal and vectorial eigenmode
+$\varepsilon_\mu(t)$ : time-varying eigenmode amplitude
+$\varepsilon_{\text {ext }}(t)$ : external pumping direction
+$e_0$ : external pump unit vector
+
+Refractive index: the parameter that determines all the dynamical features of the system
+$$
+n\left(\omega,\|\mathbf{E}\|^2\right)
+$$
+Three phenomena that should be considered:
+Linear absorption $\sim \mathrm{Q}$ factor of the dielectric cavity $\quad n_0-i n_a(\omega) \quad n_a(\omega)>0$
+Chromatic dispersion: determines various optical $\quad n_a(w)=n_{\text {int }}(w)+n_{\text {ext }}(w)$ frequencies in terms of refractive index
+Gerr nonlinearity responsible for FWM
+$$
+n_0+n_2 I
+$$
+$n_2:$ Nonlinear Kerr factor I: Irradiance of the field
+
+Applying these three corrections:
+$$
+\begin{aligned}
+\epsilon\left[r \leqslant a, \omega,\|\mathbf{E}\|^2\right] &=\left[n(\omega)+\Delta n\left(\omega,\|\mathbf{E}\|^2\right)\right]^2 \\
+& \simeq n^2(\omega)+2 n_0 \Delta n\left(\omega,\|\mathbf{E}\|^2\right)
+\end{aligned}
+$$
+$\mathrm{n}(\mathrm{w})$ : real and includes dispersive characteristics
+$$
+\Delta n\left(\omega,\|\mathbf{E}\|^2\right)=-i\left[n_{\text {int }}(\omega)+n_{\text {ext }}(\omega)\right]+n_2 \frac{n_0 \varepsilon_0 c}{2}\|\mathbf{E}\|^2
+$$
+$\Delta \mathrm{n}(\mathrm{w})$ : complex and nonlinear corrections to $n_0, \varepsilon_0$
+
+\begin{aligned}
+&\sum_\mu \mathcal{E}_\mu(t) e^{i \omega_\mu t}\left\{\Delta+\frac{\omega_\mu^2}{c^2} \operatorname{Re}[\epsilon(\mathbf{r}, \omega, 0)]\right\} \boldsymbol{\Upsilon}_\mu(\mathbf{r}) \\
+&\quad+\sum_\mu\left\{2 n_0 \Delta n\left(\omega,\|\mathbf{E}\|^2\right) \frac{\omega_\mu^2}{c^2} \mathcal{E}_\mu(t)\right. \\
+&\left.\quad-\frac{\epsilon\left(\mathbf{r}, \omega,\|\mathbf{E}\|^2\right)}{c^2}\left[\ddot{\mathcal{E}}_\mu(t)+2 i \omega_\mu \dot{\mathcal{E}}_\mu(t)\right]\right\} e^{i \omega_\mu t} \boldsymbol{\Upsilon}_\mu(\mathbf{r}) \\
+&+\frac{\epsilon\left(\mathbf{r}, \omega,\|\mathbf{E}\|^2\right)}{c^2} \Omega_0^2 \mathcal{E}_{\mathrm{ext}} e^{i \Omega_0 t} \mathbf{e}_0=\mathbf{0} .
+\end{aligned}
+
+\begin{gathered}
+{\left[\Delta+\frac{\omega_\mu^2}{c^2} \epsilon\left(r, \omega_\mu\right)\right] \boldsymbol{\Upsilon}_\mu(\mathbf{r})=\mathbf{0},} \\
+\epsilon(r, \omega)=n^2(\omega) \text { for } r \leqslant a \text { and } \epsilon(r, \omega)=1 \text { for } r>a
+\end{gathered}
+
+\begin{gathered}
+\Upsilon_{\ell m n}^{\mathrm{TE}}(\mathbf{r})=\frac{e^{i m \phi}}{k_{\ell n p} r} S_{\ell n p}(r) \mathbf{X}_{\ell m}(\theta), \\
+\Upsilon_{\ell m n}^{\mathrm{TM}}(\mathbf{r})=\frac{e^{i m \phi}}{k_{\ell n p}^2 n_0^2}\left\{\frac{1}{r} \frac{d}{d r} S_{\ell n p}(r) \mathbf{Y}_{\ell m}(\theta)+\frac{1}{r^2} S_{\ell n p}(r) \mathbf{Z}_{\ell m}(\theta)\right\}
+\end{gathered}
+
+The modal expansion model
+
+$$
+\begin{aligned}
+&\sum_\mu \mathcal{E}_\mu(t) e^{i \omega_\mu t}\left\{\Delta+\frac{\omega_\mu^2}{c^2} \operatorname{Re}[\epsilon(\mathbf{r}, \omega, 0)]\right\} \Upsilon_\mu(\mathbf{r}) \text { Vanish } \\
+&+\sum_\mu\left\{2 n_0 \Delta n\left(\omega,\|\mathbf{E}\|^2\right) \frac{\omega_\mu^2}{c^2} \mathcal{E}_\mu(t)\right. \\
+&\left.\quad-\frac{\epsilon\left(\mathbf{r}, \omega,\|\mathbf{E}\|^2\right)}{c^2}\left[\ddot{\mathcal{E}}_\mu(t)+2 i \omega_\mu \dot{\mathcal{E}}_\mu(t)\right]\right\} e^{i \omega_\mu t} \boldsymbol{\Upsilon}_\mu(\mathbf{r}) \\
+&+\frac{\epsilon\left(\mathbf{r}, \omega,\|\mathbf{E}\|^2\right)}{c^2} \Omega_0^2 \mathcal{E}_{\mathrm{ext}} e^{i \Omega_0 t} \mathbf{e}_0=\mathbf{0}
+\end{aligned}
+$$
+
+WGM exclusively are characterized by its angular number and its polarization.
+$$
+\mu=\{\ell, p\}
+$$
+Derive the temporal behavior of the modes from the remaining terms:
+
+Assumption for finding the modal expansion model:
+
+Owing to the slowly varying amplitude assumption:
+$$
+\left|\ddot{\mathcal{E}}_\mu(t)\right| \ll\left|2 \omega_\mu \dot{\mathcal{E}}_\mu(t)\right|
+$$
+second derivative term can be neglected
+The relative permittivity $\epsilon\left(\boldsymbol{r}, \omega,\|E\|^2\right)$ can be set to $\epsilon\left(\boldsymbol{r}, \Omega_0, 0\right)$
+Perturbation $\Delta n$ can be neglected when standing beside the principal value $n$.
+
+\begin{aligned}
+&\left|\ddot{\mathcal{E}}_\mu(t)\right| \ll\left|2 \omega_\mu \dot{\mathcal{E}}_\mu(t)\right|\\
+&\epsilon\left(\boldsymbol{r}, \omega,\|E\|^2\right)=\epsilon\left(\boldsymbol{r}, \Omega_0, 0\right)\\
+&\Delta n=0\\
+&\sum_\mu \omega_\mu \dot{\mathcal{E}}_\mu(t) e^{i \omega_\mu t} \mathbf{\Upsilon}_\mu(\mathbf{r})\\
+&=\sum_\mu-i \omega_\mu^2 \frac{n_0 \Delta n\left(\omega,\|\mathbf{E}\|^2\right)}{\epsilon\left(\mathbf{r}, \Omega_0, 0\right)} \mathcal{E}_\mu(t) e^{i \omega_\mu t} \mathbf{\Upsilon}_\mu(\mathbf{r})\\
+&-\frac{1}{2} i \Omega_0^2 \mathcal{E}_{\mathrm{ext}} e^{i \Omega_0 t} \mathbf{e}_0
+\end{aligned}
+
+Normalization factor:
+$$
+\mathcal{A}_\eta=\sqrt{\frac{1}{2} \frac{\varepsilon_0 n_0^2}{\hbar \omega_\eta}} \mathcal{E}_\eta
+$$
+$\left|\mathcal{A}_\eta\right|^2$ : instantaneous number of photons in the mode $\eta$
+$$
+\|\mathbf{E}\|^2=\sum_{\alpha, \beta} \mathcal{E}_\alpha \mathcal{E}_\beta^* e^{i\left(\omega_\alpha-\omega_\beta\right) t}\left[\Upsilon_\beta^*(\mathbf{r}) \cdot \Upsilon_\alpha(\mathbf{r})\right]
+$$
+
+\textbf{Coupled Mode Rate Equation}
+
+Explicit rate equation for the modal field dynamics:
+$$\dot{\mathcal{A}}_n=-\frac{1}{2} \Delta \omega_\eta \mathcal{A}_\eta+\delta_\eta \ell_0 \cdot \frac{1}{2} \Delta \omega_\eta \mathcal{F}_\eta e^{i \sigma t}$$
+$$-i g_0 \sum_{\alpha, \beta, \mu} \Lambda_\eta^{\alpha \beta \mu} \mathcal{A}_\alpha \mathcal{A}_\beta^* \mathcal{A}_\mu e^{i \omega_{\alpha \beta \mu \eta t}}$$
+FWM gain Intermodal Coupling
+$g_0=\frac{n_2 c}{n_0^2} \frac{\hbar \omega_{\eta_0}^2}{V_{\eta_0}}$
+
+Intermodal Coupling
+Tensor
+$$
+\propto \int\left[\Upsilon_\eta^* \cdot Y_\mu\right]\left[\Upsilon_\beta^* \cdot Y_\alpha\right] d V
+$$
+
+Intermodal Detuning
+$$
+\begin{aligned}
+&\omega_{\alpha \beta \mu \eta}=\omega_\alpha-\omega_\beta+\omega_\mu-\omega_\eta \\
+&\hbar \omega_\alpha+\hbar \omega_\mu \rightarrow \hbar \omega_\beta+\hbar \omega_\eta \quad \text { Energy conservation } \\
+&\ell_\alpha+\ell_\mu=\ell_\beta+\ell_\eta \quad \text { total angular momentum conservation }
+\end{aligned}
+$$
+
+\textbf{Comb Generation Threshold}
+
+polar eigen number of the pumped mode $\ell_0=14350$
+Corresponding to $\lambda_0=1560.5 \mathrm{~nm}$ in vacuum
+Refraction index $n=1.43$
+$\mathrm{CaF}_2$ cavity with radius of $\mathrm{a}=2.5 \mathrm{~mm}$
+Modal volume of the pumped cavity $V_0=6.6 \times 10^{-12} \mathrm{~m}^3$
+Kerr coefficient value $n_2=3.2 \times 10^{-20} \frac{\mathrm{m}^2}{W}$
+Cavity loaded quality factor $Q_0=3 \times 10^9$
+Corresponding to a central modal bandwidth $\Delta \omega_0 \simeq 2 \pi \times 64 \mathrm{KHz}$
+TE polarization
+
+\textbf{System below the threshold}
+
+The side modes are not excited so that simply obey:
+$$
+\begin{array}{cc}
+\mathcal{A}_{\pm l}=0 & \dot{\mathcal{A}}_0=-\frac{1}{2} \Delta \omega_0 \mathcal{A}_0-i g_0\left|\mathcal{A}_0\right|^2 \mathcal{A}_0+\frac{1}{2} \Delta \omega_0 \mathcal{F}_0 e^{i \sigma t} \\
+\text { with } l>0 & \sigma=\Omega_0-\omega_0 \quad \begin{array}{l}
+\text { Detuning angular freq. between the pump freq. } \\
+\text { and the cavity resonance }
+\end{array} \\
+\text { Explicit time dependence by introducing variable transformation } & \mathcal{B}_0=\mathcal{A}_0 \exp [-i \sigma t] \\
+\dot{\mathcal{A}}_0=-\frac{1}{2} \Delta \omega_0 \mathcal{A}_0-i g_0\left|\mathcal{A}_0\right|^2 \mathcal{A}_0+\frac{1}{2} \Delta \omega_0 \mathcal{F}_0 e^{i \sigma t} & \longrightarrow \\
+\end{array}
+$$
+Consider that the steady state amplitude of the central mode is: $\mathcal{A}_{0 S}$ and $\mathcal{B}_0=0$ and $\left|\mathcal{B}_0\right|=\left|\mathcal{A}_0\right|$
+$$
+\left|\mathcal{F}_0\right|^2=\left[1+\frac{4 \sigma^2}{\Delta \omega_0^2}\right]\left|\mathcal{A}_{0 s}\right|^2+\frac{8 g_0 \sigma}{\Delta \omega_0^2}\left|\mathcal{A}_{0 s}\right|^4+\frac{4 g_0^2}{\Delta \omega_0^2}\left|\mathcal{A}_{0 s}\right|^6 \quad \text { Bicubic equation }
+$$
+Well known hysteresis phenomenon can be observed. There are three solutions the intermediate one is unstable which corresponds to forbidden value.
+We need to establish a stability chart evidencing the forbidden values of the internal fields depending on the pumping.
+
+Bicubic equation
+
+$$
+\left.\left|\mathcal{F}_0\right|^2=\left[1+\frac{4 \sigma^2}{\Delta \omega_0^2}\right]\left|\mathcal{A}_{0 s}\right|^2+\frac{8 g_0 \sigma}{\Delta \omega_0^2}\left|\mathcal{A}_{0 s}\right|^4+\frac{4 g_0^2}{\Delta \omega_0^2}\left|\mathcal{A}_{0 s}\right|^6\right]
+$$ 
+
+When there are values of $\mathcal{A}_{0 S}$ for which the function $\quad \mathrm{C}=\frac{\partial\left[\left|\mathcal{F}_0\right|^2\right]}{\partial\left[\left|\mathcal{A}_{0 s}\right|^2\right]} \quad$ is null.
+The forbidden valued lies in between. The hysteresis boundary exists whenever the related below discriminant is positive:
+
+$$
+\Delta_{\text {hyst }}=64 \frac{g_0^2}{\Delta \omega_0^4}\left[\sigma^2-\frac{3}{4} \Delta \omega_0^2\right]
+$$
+
+Stable values of the pump are the one which:
+The boundaries:
+
+$$
+\begin{array}{ll}
+\mathrm{C}=\frac{\partial\left[\left|\mathcal{F}_0\right|^2\right]}{\partial\left[\left|\mathcal{A}_{0 s}\right|^2\right]} \text { Is positive } & \mathrm{B}_{\pm}=\frac{1}{g_0}\left[-\frac{2 \sigma}{3} \pm \frac{1}{3} \sqrt{\sigma^2-\frac{3}{4} \Delta \omega_0^2}\right] \\
+\left|\mathcal{A}_{0 s}\right|^2 \notin\left[\mathrm{B}_{-}, \mathrm{B}_{+}\right] &
+\end{array}
+$$
+
+Detuning condition: $\sigma<-\frac{\sqrt{3}}{2} \Delta \omega_0=\sigma_{\mathrm{hyst}}$
+
+When $\sigma>\sigma_{\text {hyst }}$, there is no hysteresis, and the central mode is stable regardless of its amplitude ( $\mathrm{C}$ is always positive in this case). This threshold detuning $\sigma_{\text {hyst }}$ below which forbidden values for $\mathcal{A}_{0 s}$ may arise is in fact significantly large, as it is even outside the limits $\pm \Delta \omega_0 / 2$ delimiting the bandwidth of the pumped mode. It therefore appears that as long as the detuning is reasonable (e.g., within the bandwidth of the central mode), any value of the external field $\mathcal{F}_0$ only corresponds to one value of the internal field $\mathcal{A}_{0 s}$. Moreover, any value $\mathcal{A}_{0 s}$ can theoretically be reached and actually observed. For larger detunings below the resonance frequency $\omega_0$, hysteresis arises, and there are forbidden gaps for the internal modal amplitude.
+The central mode amplitude $\mathcal{A}_{0 S}$ : zeroth-order comb
+The concept of zeroth-order comb is useful above threshold when the central mode is depleted through FWM
+
+$$
+\left(\left|\mathcal{A}_0\right|^2<\left|\mathcal{A}_{0 s}\right|^2\right)
+$$
+
+\textbf{System at threshold}
+
+The threshold leading to oscillation for a given pair of side modes $\mathcal{A}_{\pm l}=0$ Investigate the linear stability of the trivial equilibrium $\mathcal{A}_{\pm l}=0$. This equilibrium is perturbed with $\delta \mathcal{A} \mathcal{A}_{\pm l}$, and the threshold is defined by a set of infinity (onset of side mode oscillation).
+In this stability analysis, no other modes than the specific pair $\delta_{\mathcal{A}} \mathcal{A}_{\pm l}$ are oscillating.
+The side mode perturbation obey:
+$$
+\begin{aligned}
+\delta \dot{\mathcal{A}}_{\pm l}=&-\frac{1}{2} \Delta \omega_{\pm l} \delta \mathcal{A}_{\pm l}-i g_0 \Lambda_{\pm l}^{0, \mp l, 0} \mathcal{A}_0^2 \delta \mathcal{A}_{\mp l}^* e^{i \varpi_{\pm l} t} \\
+&-i g_0\left[\Lambda_{\pm l}^{\pm l, 0,0}+\Lambda_{\pm l}^{0,0, \pm l}\right]\left|\mathcal{A}_0\right|^2 \delta \mathcal{A}_{\pm l}
+\end{aligned}
+$$
+where:
+$$
+\varpi_l=2 \omega_0-\omega_l-\omega_{-l}=\varpi_{-l} \quad \text { Modal detuning }
+$$
+Overall (or cavity) dispersion parameter, simultaneously accounting for both geometrical and material dispersion. Intermodal coupling, coefficients $\Lambda_l^{0,-l, 0}, \Lambda_l^{l 00}$, and $\Lambda_l^{00 l}$ converges to 1 as $l \rightarrow 0$.
+Explicit time domain should be removed: $\quad \mathcal{B}_0=\mathcal{A}_0 \exp [-i \sigma t] \quad$ and $\delta \mathcal{B}_{\pm l}=\delta \mathcal{A}_{\pm l} \exp \left[-i\left(\sigma+\frac{1}{2} \varpi_{\pm l}\right) t\right]$
+
+$$
+\left[\begin{array}{c}
+\delta \dot{\mathcal{B}}_l \\
+\delta \dot{\mathcal{B}}_{-l}^*
+\end{array}\right]=\left[\begin{array}{cc}
+M_l & R_l \\
+R_{-l}^* & M_{-l}^*
+\end{array}\right]\left[\begin{array}{c}
+\delta \mathcal{B}_l \\
+\delta \mathcal{B}_{-l}^*
+\end{array}\right]
+$$
+$$
+\begin{gathered}
+M_l=-\frac{1}{2} \Delta \omega_l-i \sigma-\frac{1}{2} i \varpi_l-i g_0\left[\Lambda_l^{l 00}+\Lambda_l^{00 l}\right]\left|\mathcal{B}_0\right|^2 \\
+R_l=-i g_0 \Lambda_l^{0,-l, 0} \mathcal{B}_0^2 .
+\end{gathered}
+$$
+When the central mode reaches the steady state $\mathcal{B}_{0 S}$, side modes are Created when at least one of the eigenvalues $\lambda$ obeying the secular eq.
+$\left|\begin{array}{lc}M_l-\lambda & R_l \\ R_{-l}^* & M_{-l}^*-\lambda\end{array}\right|=0 \mid$
+It has a positive real part, which occurs concretely when:
+$$
+\operatorname{Re}\left\{\left[M_l+M_{-l}^*\right]+\sqrt{\left[M_l-M_{-l}^*\right]^2+4 R_l R_{-l}^*}\right\}>0
+$$
+Rigorous stability condition Required for the side mode to appear at the exclusion of any other one.
+Some simplicity:
+$$
+\left\{\begin{array}{c}
+\text { - suppose that first modes to reach threshold are relatively near the pump } \\
+\text { - intermodal coupling coefficients } \Lambda_\eta^{\alpha \beta \mu}=1 \text { as close by modes are almost perfectly overlapped } \\
+\quad-\text { Confinement factor } \Gamma_\eta \rightarrow 1 \\
+\text { - The modal linewidth can also be degenerate with } \Delta \omega_0
+\end{array}\right\}
+$$
+
+Stability condition for a side mode pair $\pm l$:
+
+$$
+\begin{aligned}
+\mathrm{S}(l)=& 12\left[g_0\left|\mathcal{A}_{0 s}\right|^2\right]^2+8\left[2 \sigma+\varpi_l\right]\left[g_0\left|\mathcal{A}_{0 s}\right|^2\right] \\
+&+\left[2 \sigma+\varpi_l\right]^2+\Delta \omega_0^2 .
+\end{aligned}
+$$
+
+To gain a simpler understanding of the threshold phenomenology, dispersion is neglected to calculate the threshold power for comb generation.
+
+Neglecting cavity dispersion
+Analysis is also valid when geometrical and material dispersion cancel each other
+Then we set $\varpi_l=0$ without being negligible themselves since we have $\overline{\omega_l}=0$.
+$$
+\begin{aligned}
+\mathrm{S}(l)=& 12\left[g_0\left|\mathcal{A}_{0 s}\right|^2\right]^2+8\left[2 \sigma+\varpi_l\right]\left[g_0\left|\mathcal{A}_{0 s}\right|^2\right] \\
+&+\left[2 \sigma+\varpi_l\right]^2+\Delta \omega_0^2 .
+\end{aligned}
+$$
+Eq. 50 is quadratic in $g_0\left|\mathcal{A}_{0 s}\right|^2$ : It is a bottom-down parabola that may or may not intersect the abscissa axis, depending on the various parameters
+
+If it does not intersect the abscissa axis, the pairs of the side modes $\pm l$ stays in the trivial equilibrium and is not excited by the pump. If it does, these side modes $\pm l$ oscillate for the parameter range for which the parabola is below the abscissa axis.
+Zeros of Eq. (50):
+
+$$
+\tilde{\mathrm{B}}_{\pm}=\frac{1}{g_0}\left[-\frac{2 \sigma}{3} \pm \frac{1}{3} \sqrt{\sigma^2-\frac{3}{4} \Delta \omega_0^2}\right]
+$$
+
+Zeros of Eq. (50):
+$$
+\begin{aligned}
+\mathrm{S}(l)=& 12\left[g_0\left|\mathcal{A}_{0 s}\right|^2\right]^2+8\left[2 \sigma+\varpi_l\right]\left[g_0\left|\mathcal{A}_{0 s}\right|^2\right] \\
+&+\left[2 \sigma+\varpi_l\right]^2+\Delta \omega_0^2 .
+\end{aligned}
+$$
+The stability condition $\mathrm{S}>0$ for comb generation therefore translates explicitly into:
+$$
+\left|\mathcal{A}_{0 s}\right|^2 \in\left[\tilde{\mathrm{B}}_{-}, \tilde{\mathrm{B}}_{+}\right]
+$$
+Following threshold value for the detuning:
+$$
+\sigma_{c r}=-\frac{\sqrt{3}}{2} \Delta \omega_0
+$$
+Critical number of photons in the pumped mode leading to comb generation when the detuning frequency $\sigma$ is varied.
+$$
+\left|\mathcal{A}_0\right|_{c r}^2=\frac{1}{\sqrt{3}} \frac{\Delta \omega_0}{g_0}
+$$
+
+Comb generation corresponds to the situation in which the discriminant is strictly positive, therefore leading to the phasedetuning condition:
+$$
+\sigma<\sigma_{c r}
+$$
+The trigger must be very large (outside the $\mathrm{BW}$ ) to trigger comb generation.
+Absolute minimum power leading to comb generation
+$$
+\partial \tilde{\mathbf{B}}_{-} / \partial \sigma=0
+$$
+The optimum detuning:
+$$
+\sigma_{\mathrm{opt}}=-\Delta \omega_0
+$$
+Which leads to the following threshold power for comb generation:
+$$
+\left|\mathcal{A}_0\right|_{\mathrm{th}}^2=\frac{1}{2} \frac{\Delta \omega_0}{g_0}=\frac{1}{2 \hbar \omega_0} \frac{n_0^2}{n_2 c} \frac{V_0}{Q_0}
+$$
+Therefore: $\quad\left|\mathcal{A}_0\right|_{c r}^2=[2 / \sqrt{3}]\left|\mathcal{A}_0\right|_{\mathrm{th}}^2$
+Critical power as the laser frequency $\sigma$ is detuned is nearly $15 \%$ higher than the absolute threshold value.
+Consider threshold power $\left|\mathcal{A}_0\right|_{\text {th }}^2$ as a normalization parameter through this research.
+35
+
+FIG. 5. Stability chart for the pumped mode and for the combs as a function of the laser detuning $\sigma$ and the stationary pumped mode power $\left|\mathcal{A}_{0 s}\right|^2$ in the zero-dispersion case. The shaded area corresponds to unstable values of $\left|\mathcal{A}_{0 s}\right|^2$ [values destabilized by hysteresis, as explained in Fig. 4(c)] defined by Eq. (41). On the other hand, the hatched area corresponds to values of the pumped mode leading to stable comb generation, according to Eq. (52). Hence comb generation is only possible wherever the hatched area does not overlap the shaded area. Since both areas are perfectly overlapped, comb generation is impossible in the zero-dispersion case.
+
+The material dispersion and geometrical dispersion not only are not detrimental to WGM comb generation but are also necessary to permit the existence of stable combs. They can also limit their frequency span. The existence of dispersion will explain why the first pair of side modes to reach the oscillation threshold is not necessarily the one adjacent to the pump and why it is possible to generate combs with multiple-FSR spacing.
+
+\textbf{Effect of Material and Geometrical Dispersion}
+
+A. Explicit determination of material and geometrical dispersion
+Optical frequency comb generation is happened when the following conditions are fulfilled simultaneously:
+- $C>0$ for the central mode
+- $S(l)<0$ for at least one side mode pair
+Rewrite this double condition:
+Stability for $l=0:\left|\mathcal{A}_{0 s}\right|^2 \notin\left[\mathrm{B}_{-}(0), \mathrm{B}_{+}(0)\right]$,
+Stability for $l \neq 0:\left|\mathcal{A}_{0 s}\right|^2 \in\left[B_{-}(l), B_{+}(l)\right]$,
+$(70)$
+B. Case $\xi<0$ (normal cavity dispersion)
+Critical detuning condition of $\mathrm{Eq} \quad \sigma_l=\sigma+\frac{1}{2} \varpi_l<\sigma_{c r}=-\frac{\sqrt{3}}{2} \Delta \omega_0$ leads to the stability conditions:
+
+C. Case $\xi>0$ (anomalous cavity dispersion)
+$$
+\begin{gathered}
+\sigma>\sigma_{c r}, \\
+|l| \geqslant l_{\min }(\sigma)=\sqrt{(2 / \zeta)\left[\sigma-\sigma_{c r}\right]} .
+\end{gathered}
+$$
+The hatched area (pumped mode leading to stable comb generation) moves rightwards according to Eq. (58), and therefore this area are quite far away from the hysteresis zone, meaning that central mode power may be unconditionally stable and thus experimentally observable.
+Therefore, anomalous dispersion can lead to comb generation.
+
+\textbf{Spatiotemporal Formalism}
+
+Total Field
+$$
+\begin{gathered}
+\psi(\theta, t)=\sum_{\ell} \mathcal{A}_{\ell}(t) e^{i\left(\omega_{\ell}-\omega_0\right) t-i\left(\ell-\ell_0\right) \theta} \\
+\frac{\partial \psi}{\partial \tau}=-(1+i \alpha) \psi+i|\psi|^2 \psi-i \frac{\beta}{2} \frac{\partial^2 \psi}{\partial \theta^2}+F \\
+\text { Dynamical equation for } \psi \\
+\text { Damping Detuning Kerr Nonlinearity Dispersion Laser Pump }
+\end{gathered}
+$$
+
+This is Lugiato-Lefever equation
+
+
+\textbf{Lugiato-Lefever Equation}
+
+Dynamical equation for $\psi$
+
+$$
+\frac{\partial \psi}{\partial \tau}=-(1+i \alpha) \psi+i \|\left.\right|^ 2 \psi-i \frac{\beta}{2} \frac{\partial^2 \psi}{\partial \theta^2}+F
+$$
+
+Damping Detuning Kerr Nonlinearity Dispersion Laser Pump
+
+$$
+\begin{aligned}
+&\psi(\theta, \tau)=\left(\frac{2 g_0}{\Delta \omega_{t o t}}\right)^{1 / 2} \mathcal{A} \\
+&\alpha=-2 \sigma / \Delta \omega_{t o t}
+\end{aligned}
+$$
+
+Dimensionless intracavity field
+Detuning
+$\beta=-2 \xi_2 / \Delta \omega_{t o t}$
+Cavity $2^{\text {nd }}$ order Dispersion
+$F=\left(8 g_0 \Delta \omega_{e x t, t} / \Delta \omega_{t o t}^3\right)^{1 / 2} \sqrt{P / \hbar \omega_L} \quad$ External Excitation
+
+\begin{gathered}
+\frac{\partial \psi}{\partial \tau}=-(1+i \alpha) \psi+i|\psi|^2 \psi-i \frac{\beta}{2} \frac{\partial^2 \psi}{\partial \theta^2}+F \\
+\text { Damping } \quad \text { Detuning Kerr Nonlinearity } \\
+P_{\min }=\frac{\hbar \omega_L}{8 g_0} \frac{\Delta \omega_{\text {tot }}^3}{\Delta \omega_{\text {ext }, t}}=2 \pi a \frac{\omega_L^2}{8 \gamma v_g^2} \frac{Q_{e x t, t}}{Q_{t o t}^3}
+\end{gathered}
+
+\textbf{Optimization procedure}
+
+It focuses on achieving:
+- The highest possible $Q$
+- The most efficient laser pump in coupling
+- Highest signal to noise ratio for the lighwave and microwave output signals
+
+\textbf{Kerr Comb Generation in Dispersion Regime}
+
+Typical WGM comb generator setup (Light is coupled to the WGMR via tapered fiber or a prism)
+Several Coupling schemes: a) prism coupling, (b) Slant-cut optical fiber, (c) tapered optical fiber (d) no-core fiber coupling
+
+\textbf{Quantum Model for Kerr Optical Frequency Combs}
+
+Spatiotemporal (top row) and Spectro temporal (bottom row) representation at a given time $t$ (snapshot) of some stationary solutions for the normalized intracavity field $\psi(\theta)=\sum_l \psi_l e^{i l}$
+
+\textbf{Lugiato-Lefever Equation Tor Kerr Comb}
+
+Turing Pattern (primary combs) generated from a small amplitude noise. The parameters are: $\alpha=1, \beta=-0.04$, and $\rho=|\psi|^2=1.2$.
+
+Dark Solution generated from a small amplitude noise. The parameters are: $\alpha=2.5, \beta=0.0125$, and $F^2=[1+$ $\left.(\rho-\alpha)^2\right] \rho=2.61$
+
+\textbf{IMAGE Bifurcation diagram}
+
+\textbf{Dissipative Kerr Solitons}
+Dissipative Kerr Soliton: Double balance of dispersion and nonlinearity as well as (parametric) gain and cavity loss.
+
+\textbf{What we've learned}
+Nonlinear and quantum dynamics of integrated resonators and optoelectronic microwave oscillators
+
+\end{document}
+
+
+
